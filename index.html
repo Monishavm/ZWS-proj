@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zero Waste Organic Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+        }
+
+        .nav-bar {
+            background: #36c9b5;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cart-section {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .cart-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: #ff6b00;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .view-details {
+            color: #0066cc;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .page-title {
+            color: #333;
+            text-align: center;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <h2>Zero Waste Organic Store</h2>
+        <div class="search-container">
+            <input type="text" placeholder="Search for eco-friendly products...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="cart-section">
+            <a href="#"><i class="fas fa-heart"></i></a>
+            <a href="cart.html" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+            <a href="#">Logout</a>
+        </div>
+    </nav>
+
+    <!-- Add these styles in the existing style section -->
+    <style>
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff6b00;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <!-- Add this script before closing body tag -->
+    <script>
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartCountElement = document.querySelector('.cart-count');
+            cartCountElement.textContent = totalItems;
+        }
+
+        // Update cart count when page loads
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+
+    <!-- Add these styles in the existing <style> section -->
+    <style>
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border-radius: 25px;
+            padding: 5px 15px;
+            margin: 0 20px;
+            width: 400px;
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            padding: 8px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .search-container button {
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .search-container button:hover {
+            color: #36c9b5;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+        }
+    </style>
+
+    <div class="main-content">
+        <h1 class="page-title">Our Zero-Waste Products</h1>
+
+        <!-- Top Offers Section -->
+        <div class="category-section">
+            <h2 class="category-title">Top Offers</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="offer-badge">20% OFF</div>
+                    <img src="./images/metal-straw-set.jpg" alt="Metal Straw Set" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Metal Straw Set</h3>
+                        <p class="original-price">₹899</p>
+                        <p class="product-price">₹699</p>
+                        <a href="product-details.html" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="offer-badge">30% OFF</div>
+                    <img src="./images/bamboo-soap-dish.jpg" alt="Bamboo Soap Dish" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Bamboo Soap Dish</h3>
+                        <p class="original-price">₹599</p>
+                        <p class="product-price">₹419</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="offer-badge">25% OFF</div>
+                    <img src="./images/cotton-produce-bags.jpg" alt="Cotton Produce Bags" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Cotton Produce Bags (Set of 3)</h3>
+                        <p class="original-price">₹799</p>
+                        <p class="product-price">₹599</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Premium Products -->
+        <div class="category-section">
+            <h2 class="category-title">Premium Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="./images/reusable-water-bottle.jpg" alt="Reusable Water Bottle" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Reusable Water Bottle</h3>
+                        <p class="product-price">₹999</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="./images/bamboo-kitchen-set.jpg" alt="Bamboo Kitchen Set" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Bamboo Kitchen Set</h3>
+                        <p class="product-price">₹1,499</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="./images/glass-food-container-set.jpg" alt="Glass Food Container Set" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Glass Food Container Set</h3>
+                        <p class="product-price">₹1,299</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="./images/steel-lunchbox-set.jpg" alt="Stainless Steel Lunchbox" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Premium Steel Lunch Box Set</h3>
+                        <p class="product-price">₹1,199</p>
+                        <a href="#" class="view-details">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .category-section {
+                margin-bottom: 40px;
+            }
+
+            .category-title {
+                color: #43a047;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #e0e0e0;
+            }
+
+            .offer-badge {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: #ff6b00;
+                color: white;
+                padding: 5px 10px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+
+            .original-price {
+                color: #999;
+                text-decoration: line-through;
+                margin-right: 10px;
+                display: inline-block;
+            }
+
+            .product-card {
+                position: relative;
+            }
+        </style>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; background: #333; color: white; margin-top: 50px;">
+        <p>© 2025 Zero Waste Organic Store. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const productTitle = card.querySelector('.product-title').textContent.trim();
+                const productImage = card.querySelector('.product-image');
+
+                // Map product titles to image file paths
+                const productImages = {
+                    "Metal Straw Set": "./images/metal-straw-set.jpg",
+                    "Bamboo Soap Dish": "./images/bamboo-soap-dish.jpg",
+                    "Cotton Produce Bags (Set of 3)": "./images/cotton-produce-bags.jpg",
+                    "Reusable Water Bottle": "./images/reusable-water-bottle.jpg",
+                    "Premium Bamboo Kitchen Set": "./images/bamboo-kitchen-set.jpg",
+                    "Glass Food Container Set": "./images/glass-food-container-set.jpg",
+                    "Premium Steel Lunch Box Set": "./images/steel-lunchbox-set.jpg"
+                };
+
+                // Assign the image source dynamically
+                if (productImages[productTitle]) {
+                    productImage.src = productImages[productTitle];
+                } else {
+                    productImage.src = "./images/default-product.jpg"; // Fallback image
+                }
+
+                // Debug log
+                console.log(`Product: ${productTitle}, Image Path: ${productImage.src}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - Hirix</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .success-content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(101.35deg, #EE1D52 8.75%, #EB5B00 91.25%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            margin: 0 auto 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .order-id {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .success-details p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .success-details p:last-child {
+            color: #EE1D52;
+            font-weight: 500;
+        }
+
+        .continue-shopping {
+            background: linear-gradient(101.35deg, #EE1D52 8.75%, #EB5B00 91.25%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .continue-shopping:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(238, 29, 82, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-content">
+        <div class="success-icon">✓</div>
+        <h2>Order Placed Successfully!</h2>
+        <p class="order-id">Order ID: #ORD123456</p>
+        <div class="success-details">
+            <p>Thank you for your purchase!</p>
+            <p>A confirmation email has been sent to your email address.</p>
+        </div>
+        <button class="continue-shopping" onclick="window.location.href='index.html'">
+            Continue Shopping
+        </button>
+    </div>
+</body>
+</html>
